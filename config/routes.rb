@@ -1,8 +1,12 @@
 Nekochanstagram::Application.routes.draw do
+
   root :to => 'cats#index'
 
   get "cats/index"
-  get "popular/index", as: :popular
+  get "popular/index"
+  get "popular" => "popular#index", as: :popular
+  get "about/index"
+  get "about" => "about#index", as: :about
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
