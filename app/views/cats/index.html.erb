@@ -1,6 +1,6 @@
 <%= form_tag("/") do %>
   <%= text_field_tag "keyword", @keyword, :type => "search" %>
-  <%= submit_tag "search", :class => "btn" %>
+  <%= submit_tag "search", :class => "btn btn-info" %>
 <% end %>
 
 <% if @media_tag.data.size > 0 then %>
