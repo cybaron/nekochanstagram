@@ -1,10 +1,9 @@
-<% form_tag("/") do %>
+<%= form_tag("/") do %>
   <%= text_field_tag "keyword", @keyword, :type => "search" %>
   <%= submit_tag("search") %>
 <% end %>
 
 <% if @media_tag.data.size > 0 then %>
-  search tag : <%= @keyword %><br>
   <% @media_tag.data.each do |media| %>
     <img src="<%= media.images.thumbnail.url %>">
   <% end %>
