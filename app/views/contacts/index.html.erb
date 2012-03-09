@@ -1,0 +1,21 @@
+<div class="container-flud">
+  <div class="row-fluid">
+  <div class="span8">
+    <%= form_for @contact, :html => {:class => "well"} do |f| %>
+      <div class="control-group">
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name %>
+        <%= f.label :email, "Email address", :class => "control-laber" %>
+        <div class="controls">
+          <div class="input-prepend">
+            <span class="add-on"><i class="icon-envelope"></i></span><%= f.text_field :email %>
+          </div><!--input-prepend-->
+        </div><!--controls-->
+      </div><!--control-group-->
+      <%= f.label :message, "Message" %>
+      <%= f.text_area :message, :class => "span10", :rows => "10", :placeholder => "問い合わせ内容を記述して下さい。" %>
+      <p><%= submit_tag "確認", :class => "btn" %></p>
+    <% end %>
+  </div><!--span8-->
+  </div><!--row-fluid-->
+</div><!--container-flud-->
