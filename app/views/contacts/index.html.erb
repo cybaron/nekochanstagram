@@ -35,7 +35,7 @@
           <div class="span12">
             <%= f.hidden_field :confirming %>
             <p>
-              <%= submit_tag "送信",   :name => :send,   :class => "btn-primary span2" %>
+            <%= submit_tag "送信",   :name => :send,   :class => "btn-primary span2", :disable_with => '送信中...' %>
               <%= submit_tag "Cancel", :name => :cancel, :class => "btn span2" %>
             </p>
           </div>
