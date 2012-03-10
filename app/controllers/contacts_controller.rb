@@ -18,6 +18,10 @@ class ContactsController < ApplicationController
     #送信ボタン押下処理
     if params[:send]
       #メール送信処理
+      mail = ContactMailer.notice(@contact)
+      mail.deliver
+
+      @contact = Contact.new
     end
   end
 

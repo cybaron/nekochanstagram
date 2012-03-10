@@ -27,4 +27,18 @@ Nekochanstagram::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # gmail setting
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  ActionMailer::Base.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address              => 'smtp.gmail.com',
+    :port                 => 587,
+    :domain               => 'smtp,gmail.com',
+    :authentication       => :login,
+    :user_name            => 'gmail user',
+    :password             => 'gmail password'
+  }
 end
