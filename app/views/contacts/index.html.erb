@@ -36,12 +36,23 @@
             <%= f.hidden_field :confirming %>
             <p>
             <%= submit_tag "送信",   :name => :send,   :class => "btn-primary span2", :disable_with => '送信中...' %>
-              <%= submit_tag "Cancel", :name => :cancel, :class => "btn span2" %>
+            <%= submit_tag "Cancel", :name => :cancel, :class => "btn span2" %>
             </p>
           </div>
         </div>
       <% else %>
         <%# 問合せ入力画面用フォーム %>
+        <% unless flash[:notice].blank? %>
+          <%= flash[:notice] %>
+        <% end %>
+        <% if @contact.errors.any? %>
+          <div class="alert alert-error" id="error_explanation">
+            <ul>
+              <% @contact.errors.full_messages.each do |msg|  %>
+                <li><%= msg %></li>
+              <% end %></ul>
+          </div><!--error_explanation-->
+        <% end %>
         <%= f.label :name, "Name" %>
         <%= f.text_field :name %>
         <div class="control-group">
