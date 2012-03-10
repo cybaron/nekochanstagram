@@ -6,6 +6,7 @@ class Contact
   attr_accessor :name
   attr_accessor :email
   attr_accessor :message
+  attr_accessor :confirming
 
   validates :name,    :presence => true,
                       :length => { :maximum => 20 }
