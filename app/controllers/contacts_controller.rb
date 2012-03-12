@@ -27,7 +27,7 @@ class ContactsController < ApplicationController
       mail = ContactMailer.notice(@contact)
       mail.deliver
 
-      flash[:notice] = 'mail send success! thanks.'
+      flash.now[:notice] = 'mail send success! thanks.'
       @contact = Contact.new
     end
   end
